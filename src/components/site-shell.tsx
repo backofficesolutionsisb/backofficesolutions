@@ -6,7 +6,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="page-shell min-h-screen">
       <SiteHeader />
-      <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 pb-10 pt-6 sm:px-6 lg:gap-10 lg:px-8 lg:pb-12">
+      <main className="flex w-full flex-col gap-24 pb-24 lg:gap-28 lg:pb-28">
         {children}
       </main>
       <SiteFooter />

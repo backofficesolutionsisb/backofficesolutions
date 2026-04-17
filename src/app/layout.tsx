@@ -1,22 +1,39 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Manrope, Space_Grotesk } from "next/font/google";
+import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import { contactLinks, siteConfig } from "@/lib/site-data";
 import "./globals.css";
 
-const manrope = Manrope({
+const poppins = Poppins({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const spaceGrotesk = Space_Grotesk({
+const clashGrotesk = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  src: [
+    {
+      path: "./fonts/ClashGrotesk-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ClashGrotesk-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ClashGrotesk-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ClashGrotesk-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -135,7 +152,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${spaceGrotesk.variable} ${ibmPlexMono.variable} h-full scroll-smooth`}
+      className={`${poppins.variable} ${clashGrotesk.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full bg-background text-foreground font-sans antialiased">
         <script
